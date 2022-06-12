@@ -15,7 +15,9 @@ include emu8086.inc
 
  main proc 
     
-    ; number 8
+    mov ax, @data
+    mov ds, ax
+    
     mov cx,0h
     mov si,0h 
     
@@ -48,15 +50,11 @@ include emu8086.inc
     
     loop step
     
-    mov cl,c
+    mov cl,10
     mov si,0h
     
    
-    
-    
-    
-    
-    
+
     
     
     sesh:  
@@ -111,12 +109,6 @@ include emu8086.inc
     mov cx,100
     mov si,0
     
-    clear:
-    
-    mov freq[si],0 
-    inc si
-    
-    loop clear
     
  main endp  
  
